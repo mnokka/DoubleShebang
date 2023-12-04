@@ -31,8 +31,8 @@ Nixos , using nix-shell approach
 
 pkgs.mkShell {
   buildInputs = [
-    pkgs.python38
-    pkgs.python38Packages.virtualenv
+    pkgs.python10
+    pkgs.python10Packages.virtualenv
   ];
 
   shellHook = ''
