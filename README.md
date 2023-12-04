@@ -1,2 +1,2 @@
-# DoubleShebang
-POC how to use shebang working with Nixos and Ubuntu in the same script 
+# LinuxAndNixosScript
+POC how to build Ubuntu and Nixos python script (with needed libraries) swithout using shebang in Nixos to download needed Python libraries
