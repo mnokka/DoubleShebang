@@ -18,3 +18,31 @@ Ubuntu(Mint) script "building":
 1) Add needed Python libraries to *requirements.txt* file 
 2) Install pip (if needed): *sudo apt install python3-pip*
 3) Install needed libraries *pip3 install -r requirements.txt*
+<br>
+<br>
+<br>
+
+Nixos , using nix-shell approach
+
+1) Create shell.nix file:
+
+```
+{ pkgs ? import <nixpkgs> {} }:
+
+pkgs.mkShell {
+  buildInputs = [
+    pkgs.python38
+    pkgs.python38Packages.virtualenv
+  ];
+
+  shellHook = ''
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+  '';
+}
+```
+2) Add needed Python libraries to *requirements.txt* file  
+
+3) Start (in current shell) new shell: *nix-shell*
+
